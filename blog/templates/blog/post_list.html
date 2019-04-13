@@ -1,17 +1,12 @@
-<html> 
-<head>
-    <title>Steph's Blog about things that end in -ain</title>
-</head>
-<body>
-    <p>Hello, World</p>
-
+{% extends 'blog/base.html'%}
+{% block content %}
     {% for post in posts %}
-        <div> 
-            <p>published: {{post.published_date}}</p>
-            <h2><a href="">{{post.title}}</a></h2>
-            <p>{{post.text|linebreaksbr}}</p>
-            <p></p>
-        </div>  
-    {% endfor%}
-</body>
-</html>
+        <div class="post">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
