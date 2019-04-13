@@ -4,5 +4,14 @@
 </head>
 <body>
     <p>Hello, World</p>
+
+    {% for post in posts %}
+        <div> 
+            <p>published: {{post.published_date}}</p>
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{post.text|linebreaksbr}}</p>
+            <p></p>
+        </div>  
+    {% endfor%}
 </body>
 </html>
